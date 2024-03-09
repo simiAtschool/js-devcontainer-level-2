@@ -6,22 +6,28 @@ services:
     build:
       context: .
       dockerfile: node.dockerfile
-      args:
-        PACKAGES: "nano wget curl"
     ports:
       - "3000:3000"
     volumes:
-      - ./logs:/var/www/logs
+      - logs:/var/www/logs
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - APP_VERSION=1.0
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_SERVER=mongodb
+      - MONGO_DB=funWithDocker
     depends_on: 
       - mongodb
       
   mongodb:
     image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - db:/data/db
 
 volumes:
   db:
+  logs:

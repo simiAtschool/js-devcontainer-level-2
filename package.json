@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
+    "dev": "nodemon -L src/index.js",
     "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/styles.css"
   },
   "dependencies": {
