@@ -14,6 +14,7 @@ const express = require("express"),
   port = process.env.PORT || 3000,
   //config = require("./lib/configLoader"),
   db = require("./lib/database"),
+  logger = require("./lib/logger"),
   routes = require("./routes/index"),
   app = express();
 
