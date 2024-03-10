@@ -79,7 +79,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(port, function (err) {
+app.listen(port, "0.0.0.0", function (err) {
   console.log("[%s] Listening on http://localhost:%d", app.settings.env, port);
 });
 
