@@ -9,12 +9,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=${NODE_ENV}
-      - APP_VERSION=${APP_VERSION}
+      - NODE_ENV=development
+      - APP_VERSION=1.0
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-      - MONGO_SERVER=mongodb
-      - MONGO_DB=funWithDocker
+      - MONGO_SERVER=${MONGO_SERVER}
+      - MONGO_DB=${MONGO_DB}
     depends_on: 
       - mongodb
       
